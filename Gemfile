@@ -1,7 +1,7 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.15'
-ruby '1.9.3'
+ruby '2.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,7 +9,7 @@ ruby '1.9.3'
 # for Heroku deployment - as described in Ap A of ELLS book
 group :development, :test do
   gem 'sqlite3'
-  gem 'debugger'
+  gem 'pry-byebug'
 end
 
 group :production do
@@ -33,7 +33,7 @@ end
 gem 'jquery-rails'
 
 # use Haml for templates
-gem 'haml'
+gem 'haml-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -2,7 +2,25 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.all
+    # @movies = Movie.all
+
+     @sort_by = params[:sort]
+    if @sort_by == ("title")
+      begin
+        @movies = Movie.order("#{@sort_by} ASC").all
+      rescue ActiveRecord::StatementInvalid
+        @movies = Movie.all
+      end
+    elsif @sort_by.eql?('release_date')
+      begin
+        @movies = Movie.order("#{@sort_by} ASC").all
+      rescue ActiveRecord::StatementInvalid
+        @movies = Movie.all
+      end
+    else
+      @movies = Movie.all
+    end
+
   end
 
   def show
